@@ -11,7 +11,7 @@ create table departamento(
 
 create table municipio(
 	codigo_m integer, --Identificador del municipio
-	codigo_d_departamento integer  not null, --Llave foranea referenciada a la tabla departamento
+	codigo_d_departamento integer  not null, --Llave foranea de la tabla referenciada departamento
 	nombre_m varchar(30) not null, --Nombre del municipio
 	numero_evaluados_m integer not null, --Numero de estudiantes que presentan la prueba ICFES en el municipio
 	primary key(codigo_m), --Constraint Primary Key
@@ -22,7 +22,7 @@ create table municipio(
 --IMPORTANTE: REVISAR EL NOMBRE "COLEGIO"
 create table colegio(
 	codigo integer, --Identificador del colegio
-	codigo_m_municipio integer not null, --Llave foranea referenciada a la tabla municipio
+	codigo_m_municipio integer not null, --Llave foranea de la tabla referenciada municipio
 	nombre_colegio varchar(30) not null,--Nombre del colegio
 	calendario varchar(10), --Cronograma del colegio
 	genero varchar(10), --Tipo de sexo de los estudiantes
@@ -39,7 +39,7 @@ create table estudiante(
 	sexo char not null, --Sexo del estudiante
 	fecha_nacimiento date not null, --Fecha de nacimiento del estudiante
 	estrato smallint, --Identificador del nivel socioeconomico en el que vive el estudiante
-	codigo_colegio integer not null, --Llave foranea referenciada a la tabla estudiante
+	codigo_colegio integer not null, --Llave foranea de la tabla referenciada colegio
 	primary key(id_estudiante), --Constraint Primary key
 	foreign key(codigo_colegio) references colegio(codigo) --Constraint Foreign key
 );
@@ -56,7 +56,7 @@ create table examen(
 	puntaje_sociales integer not null, --Numero de puntos obtenidos en el area de sociales y competencias cuidadanas
 	puntaje_ingles integer not null, --Numero de puntos obtenidos en el area de ingles
 	puntaje_lectura_critica integer not null, --Numero de puntos obtenidos en el area de Lectura Critica
-	id_estudiante integer not null, --Llave foranea referenciada a la tabla estudiante
+	id_estudiante integer not null, --Llave foranea de la tabla referenciada estudiante
 	primary key(id_examen), --Constraint Primary key
 	foreign key(id_estudiante) references estudiante(id_estudiante) --Constraint Foreign key
 );
