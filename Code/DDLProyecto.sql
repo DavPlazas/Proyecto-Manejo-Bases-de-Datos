@@ -1,3 +1,17 @@
+--Creacion de la base da datos 'proyecto'
+-- Database: proyecto
+
+-- DROP DATABASE proyecto;
+
+CREATE DATABASE proyecto
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Colombia.1252'
+    LC_CTYPE = 'Spanish_Colombia.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+    
 --Creacion de la tabla departamento
 
 create table departamento(
