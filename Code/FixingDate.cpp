@@ -7,7 +7,7 @@ int main(){
   ifstream ifs("ultimaprueba2.txt"); //Nombre del archivo de lectura
   ofstream ofs("definitivo.txt",ios::trunc); //Nombre del archivo de escritura
   string linea=""; //String para leer la fecha de nacimiento (INCORRECTA)
-  if(!ifs.eof()){ //Si no es el final del archivo, que empieze a leer el arciho
+  if(!ifs.eof()){ //Si no es el final del archivo, que empiece a leer el archivo
     while(!ifs.eof()){ // Mientras no sea el final, continue
       getline(ifs,linea);
       //cout<<linea<<endl;
@@ -15,7 +15,6 @@ int main(){
       string temp_mes="";
       string temp_anio="";
       string total="";
-      //cout<<"tamanio: "<<linea.size()<<endl;
       for (int j=0;j<linea.size();j++){
         if(linea.size()==11 || linea.size()==10){ //Tamaño del string linea
           if(j<2)
