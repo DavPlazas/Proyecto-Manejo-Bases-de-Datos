@@ -7,7 +7,7 @@ Se trabajará con una base de datos que se encuentra en el siguiente link: [ICFE
 Carga de datos: [Acesso rápido](Code/CargaDatos.sql)
 
 - [x] Primera Entrega 
-- [x] Segunda Entrega: 
+- [x] Segunda Entrega
 - [ ] Tercera Entrega
 
 
