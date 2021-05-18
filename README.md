@@ -1,4 +1,4 @@
-# *Proyecto bases de datos. * 
+# Proyecto bases de datos. 
 
 Objetivo: Analizar las relaciones existentes entre algunas variables(estrato,departamento...) y datos obtenidos en el examen ICFES Saber-11 periodo 2019-I y 2019-II.
 
