@@ -5,6 +5,7 @@ Objetivo: Analizar las relaciones existentes entre algunas variables `Estrato, d
 Se trabajará con una base de datos que se encuentra en el siguiente link: [ICFES](https://www.datos.gov.co/Educaci-n/Saber-11-2019-2/ynam-yc42/data).
 
 Carga de datos: [Acesso rápido](Code/CargaDatos.sql)
+Archivo Json (choroplath) [Link][https://gist.githubusercontent.com/john-guerra/43c7656821069d00dcbc/raw/be6a6e239cd5b5b803c6e7c2ec405b793a9064dd/Colombia.geo.json]
 
 - [x] Primera Entrega 
 - [x] Segunda Entrega
