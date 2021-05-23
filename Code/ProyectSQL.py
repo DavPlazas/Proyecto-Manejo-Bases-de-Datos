@@ -53,3 +53,10 @@ def RankingMejoresColegiosBogota():
                         where m.codigo_m = 11001
                                 group by nombre_colegio 
                                     order by puntaje_col desc"""
+
+#Promedio de puntaje global obtenido en colegios oficiales y no oficiales
+def avgPromediosTipoColegio():
+    return ''' SELECT c.naturaleza, avg(ex.puntaje_global)::real as puntaje_global
+               FROM ((colegio as c INNER JOIN estudiante as est ON c.codigo = est.codigo_colegio)
+               INNER JOIN examen as ex ON est.id_estudiante = ex.id_estudiante)  
+               GROUP BY c.naturaleza; ''' 
