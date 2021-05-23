@@ -173,31 +173,26 @@ if __name__ == '__main__':
     
 
 
-#-----PARTE DAVID
-#Promedio puntaje global colegios públicos vs privados
-# con = Connection()
-# con.openConnection()
-# query1=''' SELECT c.naturaleza, avg(ex.puntaje_global)::real as puntaje_global
-#             FROM ((colegio as c INNER JOIN estudiante as est ON c.codigo = est.codigo_colegio)
-#             INNER JOIN examen as ex ON est.id_estudiante = ex.id_estudiante)  
-#             GROUP BY c.naturaleza; ''' 
-            
-# query=pd.read_sql_query(query1,con.connection)
+#-----PARTE DAVID--------------
+#
+#
+#
+#
+#
+#
+#
 
-# con.closeConnection() 
-# df1=pd.DataFrame(query, columns=["naturaleza", "puntaje_global"])
+#----PARTE SANTIAGO------------
+#
+#
+#
+#
+#
 
-# #Gráfico de barras
-# figBar1 = px.bar(df1, x="naturaleza", y="puntaje_global")
-
-# #Layut
-# app.layout = html.Div(children=[
-#     html.H1(children='Dashboard ICFES 2019'),
-#     html.H2(children='Promedio puntaje global colegios públicos vs privados'),
-#     dcc.Graph(
-#         id='barAvgGlobalScorePerSchoolType',
-#         figure=figBar1
-#     )  
-# ])
+#----PARTE JOSE -----------
+#
+#
+#
+#
 
     
