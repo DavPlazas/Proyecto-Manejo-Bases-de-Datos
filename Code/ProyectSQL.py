@@ -33,3 +33,23 @@ def avgSubjectsF():
     from examen x inner join estudiante e on e.id_estudiante=x.id_estudiante 
     group by e.sexo having e.sexo<>'-' and e.sexo='F' '''
 
+#Promedio del puntaje por cada estrato
+def PuntajeByEstrato():
+    return """select avg(x.puntaje_global)::real as promedio_puntaje, e.estrato as estrato
+              from examen x inner join estudiante e on x.id_estudiante = e.id_estudiante
+              group by e.estrato"""
+    
+#Número de estuidantes por estrato
+def CuantosPorEstrato():
+    return """select estrato, count(estrato) as many
+                from estudiante
+                    group by estrato"""
+
+#Colegios de Bogotá ordenados por puntaje                    
+def RankingMejoresColegiosBogota():
+    return """select c.nombre_colegio as nombre_c, avg(x.puntaje_global)::real as puntaje_col
+                from ((examen x inner join estudiante e on x.id_estudiante = e.id_estudiante) inner join colegio c on e.codigo_colegio = c.codigo) 
+                    inner join municipio m on m.codigo_m = c.codigo_m_municipio
+                        where m.codigo_m = 11001
+                                group by nombre_colegio 
+                                    order by puntaje_col desc"""
