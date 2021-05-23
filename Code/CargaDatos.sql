@@ -89,3 +89,9 @@ from 'C:\Carga datos proyectoBD\ExamenFinal.csv' delimiter ';' csv header;
 alter table examen alter column puntaje_ingles drop not null;
 
 select * from examen;
+
+update departamento set nombre_d = 'SANTAFE DE BOGOTA D.C' where codigo_d = 11
+
+update departamento set nombre_d = 'NORTE DE SANTANDER' where codigo_d = 54
+
+update departamento set nombre_d = 'VALLE DEL CAUCA' where codigo_d = 76
