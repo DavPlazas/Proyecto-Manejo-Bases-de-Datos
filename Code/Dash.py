@@ -175,13 +175,19 @@ if __name__ == '__main__':
 
 #-----PARTE DAVID--------------
 #
-#
-#
-#
-#
-#
-#
+# Promedio puntaje global colegios públicos vs privados
+con = Connection()
+con.openConnection() 
+query=pd.read_sql_query(avgPromediosTipoColegio(),con.connection)  
 
+con.closeConnection() 
+df1=pd.DataFrame(query, columns=["naturaleza", "puntaje_global"])
+
+#Gráfico de barras
+figBar1 = px.bar(df1, x="naturaleza", y="puntaje_global",width=450, height=500) 
+#
+#
+#
 #----PARTE SANTIAGO------------
 #
 #
