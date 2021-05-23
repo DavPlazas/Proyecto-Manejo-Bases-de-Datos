@@ -185,9 +185,34 @@ if __name__ == '__main__':
 #----PARTE SANTIAGO------------
 #
 #
+con = Connection()
+con.openConnection()
+query = pd.read_sql_query(sql.PuntajeByEstrato(), con.connection)
+con.closeConnection()
+dfCases = pd.DataFrame(query, columns=["promedio_puntaje", "estrato"])
+
+# Grafico barras promedio puntaje global por estrato
+
+figBarPuntajeEstrato = px.bar(dfCases.head(7), x="estrato", y="promedio_puntaje")
 #
 #
+con = Connection()
+con.openConnection()
+query = pd.read_sql_query(sql.CuantosPorEstrato(), con.connection)
+con.closeConnection()
+dfestrato = pd.DataFrame(query, columns=["estrato", "many"])
+#Grafico Pie distribución de estratos
+figPieEstrato = px.pie(dfestrato, values="many", names="estrato",
+                     title='Distribución de los estratos de los estudiantes')
 #
+#
+con = Connection()
+con.openConnection()
+query = pd.read_sql_query(sql.RankingMejoresColegiosBogota(), con.connection)
+con.closeConnection()
+dfranking = pd.DataFrame(query, columns=["nombre_c", "puntaje_col"])
+#Grafico Bar Horizontal Mejores Colegios Bogotá
+figBarRanking = px.bar(dfranking.head(10), y="nombre_c",x="puntaje_col" , orientation = 'h')
 
 #----PARTE JOSE -----------
 #
