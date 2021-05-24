@@ -8,8 +8,8 @@ Carga de datos: [Acesso rápido](Code/CargaDatos.sql)
 
 Archivo Json (choroplath): [Link](https://gist.githubusercontent.com/john-guerra/43c7656821069d00dcbc/raw/be6a6e239cd5b5b803c6e7c2ec405b793a9064dd/Colombia.geo.json).
 
-- [x] Primera Entrega 
-- [x] Segunda Entrega
+- [x] Primera Entrega: [Here](Descripción/PrimeraEntrega.pdf)
+- [x] Segunda Entrega: [Here](Descripción/SegundaEntrega.pdf)
 - [ ] Tercera Entrega
 
 
