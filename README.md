@@ -10,7 +10,7 @@ Archivo Colombia.Json (choroplath): [Link](https://gist.githubusercontent.com/jo
 
 - [x] Primera Entrega: [Here](Descripción/PrimeraEntrega.pdf)
 - [x] Segunda Entrega: [Here](Descripción/SegundaEntrega.pdf)
-- [ ] Tercera Entrega
+- [x] Tercera Entrega: [Here](Descripción/TerceraEntrega.pdf)
 
 
 
