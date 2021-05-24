@@ -5,6 +5,11 @@ Created on Sat May 22 21:35:49 2021
 @author: David
 """
 
+#---------------------------------------------------------------------------------
+#---------------------------------VERSION PARCIAL---------------------------------
+#---------------------------------------------------------------------------------
+
+
 #Funcion para determinar el promedio obtenido en el area de ingles por departamentos
 def avgIngles():
     return ''' select avg(x.puntaje_ingles)::real as promingles, d.nombre_d as departamento from 
