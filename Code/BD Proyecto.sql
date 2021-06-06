@@ -4,7 +4,7 @@
 -- Project Site: pgmodeler.io
 -- Model Author: ---
 
-
+ 
 -- Database creation must be done outside a multicommand file.
 -- These commands were put in this file only as a convenience.
 -- -- object: new_database | type: DATABASE --
