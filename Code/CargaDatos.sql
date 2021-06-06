@@ -5,7 +5,6 @@ copy departamento (codigo_d,nombre_d,numero_evaluados_d)
 from 'C:\Carga datos proyectoBD\Departamento.csv' with delimiter ';' csv header;
 
 --MUNICIPIO
-select * from municipio where nombre_m='MAGANGUÉ';
 
 copy municipio (codigo_d_departamento,nombre_m,codigo_m,numero_evaluados_m)
 from 'C:\Carga datos proyectoBD\Municipio.csv' with delimiter ';' csv header;
@@ -18,8 +17,8 @@ select * from colegio;
 --POR LO QUE HAY QUE ELIMINAR LOS CONSTRAINT'S PARA CAMBIAR EL TIPO DE DATO
 --EN TODAS LAS TABLAS QUE TENGAN RELACION CON COLEGIO.CODIGO.
 --TAMBIEN SE PRESENTA UN ERROR CON EL TIPO DE DATO DE LA COLUMNA nombre_colegio
---varchar(30) no es suficiente para algunos nombres de colegios
---ASIMISMO SE PRESENTA UN ERROR CON LA COLUMNA codigo_m_municipio
+--varchar(30) no es suficiente para algunos nombres de colegios.
+--ASIMISMO, SE PRESENTA UN ERROR CON LA COLUMNA codigo_m_municipio
 --PUES ALGUNOS COLEGIOS NO TIENEN UNA IDENTIFICACION PARA VER A QUE
 --MUNICIPIO PERTENECEN '-'
 
@@ -55,11 +54,13 @@ alter table colegio alter column nombre_colegio set data type varchar(120);
 
 --POR ULTIMO, SE REALIZA LA CARGA DE DATOS
 copy colegio (codigo,nombre_colegio,calendario,genero,localizacion,naturaleza,codigo_m_municipio) 
-from 'C:\Carga datos proyectoBD\Colegio2.csv' with delimiter ';' csv header;
+from 'C:\Carga datos proyectoBD\ColegioF.csv' with delimiter ';' csv header;
 
 select * from colegio;
 
 --ESTUDIANTE
+select * from estudiante;
+
 --ERROR CON LAS FECHAS DEL ARCHIVO estudiante
 --CAMBIO TOTAL DEL ARCHIVO
 --TAMBIEN SE PRESENTA ERROR CON LA COLUMNA estrato
@@ -67,15 +68,22 @@ select * from colegio;
 --ESTO. ALGUNAS FILAS TIENEN COMO VALOR "-", "Sin" EN LA COLUMNA estrato
 --POR LO QUE SE ELIGE UN NUMERO PARA EL ESTRATO INDEFINIDO:-1
 
---CODIGO PARA ARREGLAR LAS FECHAS DE NACIMIENTO:C++ 
+--CODIGO PARA ARREGLAR LAS FECHAS DE NACIMIENTO: C++ 
 
 --FINALMENTE CARGAR LOS DATOS
 copy estudiante(id_estudiante,fecha_nacimiento,estrato,sexo,codigo_colegio)
-from 'C:\Carga datos proyectoBD\EstudianteTotal.csv' with delimiter ';' csv header;
+from 'C:\Carga datos proyectoBD\EstudianteFinal.csv' with delimiter ';' csv header;
 
 select * from estudiante;
 
 --EXAMEN
+
+--El archivo .csv para la carga de datos de la tabla examen
+--se encuentra en el siguiente link:
+
+--https://uredu-my.sharepoint.com/:x:/r/personal/germand_plazas_urosario_edu_co/_layouts/
+--15/Doc.aspx?sourcedoc=%7B9DB11809-E1EF-4A71-90A6-F21AD1C12105%7D&file=ExamenFinal.csv&action=default&mobileredirect=true
+
 
 --ERRORES:
 --COLUMNA percentil APARECE EL DATO "-" POR LO QUE SE LE ASIGNA EL VALOR DE UN ENTERO:-1
